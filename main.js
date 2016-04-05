@@ -22,7 +22,8 @@ function AppComponent() {
             for(var i = 0; i < list.length; i++){
                this.todos[i] = {
                    id: list[i].id,
-                   item: list[i].item
+                   item: list[i].item,
+                   date: list[i].date
                 };
             }
         });
@@ -49,12 +50,26 @@ function AppComponent() {
         });
     }
 
- /*   function ffff($event, list) {
-        for (var i = 0; i < list.length; i++) {
-            if ($event == "click") return this[i];
-
-        } console.log(i);
-    } */
+function dates() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if( dd < 10) {
+        dd = '0' + dd;
+    }
+    if(mm < 10) {
+        mm = '0' + mm;
+    }
+    today = yyyy + '-' + mm + '-' + dd;
+    var d = new Date();
+    var tomorrow = d.getFullYear() + '-0' + (d.getMonth() + 1) + '-' + (d.getDate()+1);
+    $(".arr").attr("min", today);
+    $(".arr").attr("value", today);
+    $(".dep").attr("min", tomorrow);
+    $(".dep").attr("value", tomorrow);
+}
+dates();
 
 
 AppComponent.annotations = [
@@ -64,7 +79,7 @@ AppComponent.annotations = [
     new angular.ViewAnnotation({
         template: '<h3>TODO</h3>' +
             '<ol>' +
-            '<li (click)="remove1(todo)" *ng-for="#todo of todos">{{ todo.item }} <span *ng-for="#date of todos">  {{ todo.date }}</span></li>' +
+            '<li (click)="remove1(todo)" *ng-for="#todo of todos" *ng-for="#date of todos">{{ todo.item }}  <span>{{ todo.date }}</span></li>' +
             '</ol>' +
             '<form (submit)="addTodo($event, todotext, tododate)"><input #todotext placeholder="What to do..."><input type="date" #tododate placeholder="When to do..."><br/><button>ADD</button></form>',
         directives: [angular.NgFor]
