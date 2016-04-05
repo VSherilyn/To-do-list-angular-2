@@ -11,10 +11,10 @@
             margin: auto;
             font-size: 2em;
         }
-        div {
+        .list {
             border: 1px solid black;
             background-image: url('http://previews.123rf.com/images/tatyanamh/tatyanamh1105/tatyanamh110500001/9491615-The-pattern-of-rounded-leaves-on-a-violet-background-Background-Banner--Stock-Vector.jpg');
-
+            display: block;
             margin: auto;
         }
         h3 {
@@ -33,7 +33,7 @@
             text-align: center;
         }
         button {
-            background: linear-gradient(to right, white, pink);
+            background: white;
             border: 1px solid black;
             width: 160px;
             height: 50px;
@@ -41,24 +41,34 @@
             font-size: 1.1em;
             margin: 10px;
         }
+        button:hover {
+            background: indigo;
+            transition: 2s;
+        }
         ol {
             margin: auto;
-            width: 85%;
+            width: 75%;
+            position: relative;
         }
         li {
             cursor: pointer;
             height: 50px;
             transition: 5ms;
+
         }
         li:hover {
-            background: linear-gradient(to right, white, pink);
+            background: indigo;
+            transition: 2s;
+            color: white;
 
         }
     </style>
 </head>
 <body>
     <script src="https://code.angularjs.org/2.0.0-alpha.26/angular2.sfx.dev.js"></script>
+   <!-- <script src="https://jspm.io/system.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.31/angular2.dev.js"></script> -->
     <script src="main.js"></script>
-    <div></div>
+    <list class="list"></list>
 </body>
 </html>
