@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>TO DO List</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -11,27 +12,31 @@
             margin: auto;
             font-size: 2em;
         }
+
         .list {
             border: 1px solid black;
             background-image: url('http://previews.123rf.com/images/tatyanamh/tatyanamh1105/tatyanamh110500001/9491615-The-pattern-of-rounded-leaves-on-a-violet-background-Background-Banner--Stock-Vector.jpg');
             display: block;
             margin: auto;
         }
+
         h3 {
             color: black;
             text-align: center;
         }
+
         input {
             width: 300px;
             height: 60px;
             font-size: 1em;
             border: 1px solid black;
             margin-right: 10px;
-
         }
+
         form {
             text-align: center;
         }
+
         button {
             background: white;
             border: 1px solid black;
@@ -41,37 +46,47 @@
             font-size: 1.1em;
             margin: 10px;
         }
+
         button:hover {
             background: indigo;
             transition: 2s;
+            color: white;
         }
+
         ol {
             margin: auto;
             width: 75%;
             position: relative;
         }
+
         li {
             cursor: pointer;
             height: 50px;
             transition: 5ms;
-
         }
+
         li:hover {
             background: indigo;
             transition: 2s;
             color: white;
-
         }
-        span {
+
+        .date {
             float: right;
+        }
+
+        #today {
+            color: red;
         }
     </style>
 </head>
+
 <body>
-    <script src="https://code.angularjs.org/2.0.0-alpha.26/angular2.sfx.dev.js"></script>
-   <!-- <script src="https://jspm.io/system.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-alpha.31/angular2.dev.js"></script> -->
-    <script src="main.js"></script>
-    <list class="list"></list>
+<script src="https://code.angularjs.org/2.0.0-alpha.26/angular2.sfx.dev.js"></script>
+<!-- <script src="https://jspm.io/system.js"></script>
+  <script src="https://code.angularjs.org/2.0.0-alpha.31/angular2.dev.js"></script> -->
+<script src="main.js"></script>
+<list class="list"></list>
 </body>
+
 </html>
